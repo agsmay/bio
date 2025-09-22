@@ -244,56 +244,35 @@ const readMoreBtns = document.querySelectorAll('.read-more-btn');
 // Project data - you can customize this with your actual project information
 const projectData = {
     satellite: {
-        title: "CubeSat Mission Control System",
-        description: "Developed a comprehensive mission control system for a CubeSat satellite project, featuring real-time telemetry monitoring, orbital tracking algorithms, and automated command sequences. The system successfully managed satellite operations for 6 months, handling over 10,000 telemetry packets and executing 500+ automated commands.",
+        title: "SELENE Lunar CubeSat Mission",
+        description: "Built a fully functional prototype CubeSat, 'SELENE', complete with telemetry, electrical power systems, multiple payloads and an attitude determination and control system.",
         images: [
             "images/satellite/satellite-main.jpg",
-            "images/satellite/ground-station.jpg", 
+            "images/satellite/on_table.jpg", 
             "images/satellite/telemetry-dashboard.jpg",
             "images/satellite/orbital-tracking.jpg"
         ],
         challenges: [
-            "<strong>Real-time Communication:</strong> Implemented robust radio communication protocols to maintain contact with the satellite during orbital passes, achieving 95% successful communication rate.",
-            "<strong>Orbital Mechanics:</strong> Developed custom algorithms for predicting satellite position and timing ground station passes, with accuracy within 30 seconds.",
-            "<strong>Data Processing:</strong> Built efficient telemetry parsing system to handle high-frequency data streams and detect anomalies in real-time.",
-            "<strong>Power Management:</strong> Designed intelligent power management system to optimize battery usage and ensure continuous operation during eclipse periods."
+            "<strong>State Estimation:</strong> Implemented non-linear state estimation techniques to provide accurate orientation estimates to the onboard computer.",
+            "<strong>Attitude Dynamics and Control:</strong> Developed and tuned a custom control algorithm to provide precise pointing control in reference to telemetry commands.",
+            "<strong>Integration:</strong> Modular development of different subsystems allowed for efficient integration into the final prototype.",
         ],
-        technologies: ["Python", "C++", "Raspberry Pi", "Radio Communication", "Orbital Mechanics", "Real-time Systems", "Data Analysis", "Linux"],
-        results: [
-            { number: "6", label: "Months Operation" },
-            { number: "10K+", label: "Telemetry Packets" },
-            { number: "95%", label: "Success Rate" },
-            { number: "500+", label: "Commands Executed" }
-        ],
-        video: "https://www.youtube.com/embed/your-satellite-video-id",
-        liveDemo: "https://your-satellite-demo.com",
-        github: "https://github.com/yourusername/cubesat-mission-control"
+        technologies: ["Python", "C++", "Raspberry Pi"],
+        video: "https://youtube.com/shorts/LzoBAVyGnyg",
     },
     webapp: {
-        title: "AI-Powered Analytics Dashboard",
-        description: "Built a comprehensive real-time analytics platform that processes millions of data points daily, providing actionable insights through machine learning algorithms. The system serves over 10,000 active users with 99.9% uptime and features automated anomaly detection, predictive analytics, and custom reporting capabilities.",
+        title: "Flight Simulator",
+        description: "Worked with a research group at the University of Sydney on improving the motion cueing algorithm for their ball flight simulator. This involved developing a constraint algorithm to ensure safe operation, as well as working on custom washout algorithms for enhanced force perception.",
         images: [
-            "images/webapp/dashboard-main.jpg",
-            "images/webapp/analytics-view.jpg",
-            "images/webapp/ml-insights.jpg",
-            "images/webapp/custom-reports.jpg"
+            "images/ball/ball_main.jpg",
+            "images/ball/brendan_flying.png"
         ],
         challenges: [
-            "<strong>Scalability:</strong> Designed distributed architecture to handle 1M+ data points per minute with sub-second response times.",
-            "<strong>Machine Learning Integration:</strong> Implemented real-time ML pipeline for anomaly detection and predictive analytics with 98% accuracy.",
-            "<strong>Data Visualization:</strong> Created interactive dashboards with custom D3.js visualizations for complex data relationships.",
-            "<strong>Real-time Processing:</strong> Built event-driven architecture using Apache Kafka for real-time data streaming and processing."
+            "<strong>Safety:</strong> Implemented a constraint algorithm to ensure safe operation for all users, with tunable safety limits depending on the pilot's skill level.",
+            "<strong>Pilot Feedback:</strong> Tested algorithms with trained pilots, and implemented algorithm changes based on feedback.",
         ],
-        technologies: ["React", "Node.js", "TensorFlow", "AWS", "Docker", "Kubernetes", "Apache Kafka", "PostgreSQL", "Redis"],
-        results: [
-            { number: "10K+", label: "Active Users" },
-            { number: "99.9%", label: "Uptime" },
-            { number: "1M+", label: "Data Points/Min" },
-            { number: "98%", label: "ML Accuracy" }
-        ],
-        video: "https://www.youtube.com/embed/your-webapp-video-id",
-        liveDemo: "https://your-analytics-demo.com",
-        github: "https://github.com/yourusername/ai-analytics-dashboard"
+        technologies: ["MATLAB", "Network Programming", "Simulink"],
+        video: "https://youtube.com/shorts/E_AEI1XaJus",
     },
     mobile: {
         title: "IoT Smart Home Controller",

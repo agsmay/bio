@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Project Portfolio</title>
+    <title>Sam Magarey - Project Portfolio</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -12,9 +12,9 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <div class="nav-logo">
-                <h2>Your Name</h2>
-            </div>
+                <div class="nav-logo">
+                    <h2>Sam Magarey</h2>
+                </div>
             <ul class="nav-menu">
                 <li class="nav-item">
                     <a href="#home" class="nav-link">Home</a>
@@ -44,9 +44,8 @@
                 <h1 class="hero-title">Hi, I'm <span class="highlight">Sam Magarey</span></h1>
                 <p class="hero-subtitle">Aerospace Engineering and Mathematics Student</p>
                 <p class="hero-description">
-                    I am a student at the University of Sydney, and a lead for the USYD Rocketry Team's Modelling and Control Subsystem.
-
-                    Recent completion of a CubeSat prototype "SELENE" has given me a great interest in the growing field of small satellite design, as well as reusable space systems.
+                    I am a penultimate year student at the University of Sydney, and a lead for the USYD Rocketry Team's Modelling and Control Subsystem. 
+                    My strengths lie in control systems, modelling and simulation, as well as problem solving, leadership and communication.
                 </p>
                 <div class="hero-buttons">
                     <a href="#projects" class="btn btn-primary">View My Work</a>
@@ -56,7 +55,7 @@
             <div class="hero-image">
                 <div class="profile-placeholder">
                     <i class="fas fa-user"></i>
-                    <p>Your Photo Here</p>
+                    <p>images/me.jpg</p>
                 </div>
             </div>
         </div>
@@ -69,44 +68,34 @@
             <div class="about-content">
                 <div class="about-text">
                     <p>
-                        <!-- Replace this paragraph with your own story -->
-                        I'm a passionate developer with a love for creating innovative solutions. 
-                        With experience in both frontend and backend technologies, I enjoy tackling 
-                        complex problems and turning ideas into reality.
+                        I'm a penultimate year Aerospace Engineering and Mathematics student at the University of Sydney, with a passion for embedded systems, control systems and their application in space systems. I have recently completed a project in a team of 8 developing a prototype CubeSat, "SELENE", which we have been selected to present at the 11th UNISEC Global Meeting in Tokyo, Japan.
                     </p>
                     <p>
-                        <!-- Add more about your background, interests, and goals -->
-                        When I'm not coding, you can find me exploring new technologies, 
-                        contributing to open source projects, or sharing knowledge with the community.
+                        I am a casual academic at the University of Sydney, teaching, developing and revising course materials for core second year units. As a research intern I was involved in developing new software the School's state of the art flight simulators. As a lead for USYD Rocketry, I have exceptional interpersonal skills such as communication and collaboration.
                     </p>
                 </div>
                 <div class="skills">
                     <h3>Technical Skills</h3>
                     <div class="skills-grid">
-                        <!-- Add your skills here - these are examples -->
-                        <div class="skill-item">
-                            <i class="fab fa-js-square"></i>
-                            <span>JavaScript</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-react"></i>
-                            <span>React</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-node-js"></i>
-                            <span>Node.js</span>
-                        </div>
+                        <!-- Technical skills for aerospace engineering -->
                         <div class="skill-item">
                             <i class="fab fa-python"></i>
                             <span>Python</span>
                         </div>
                         <div class="skill-item">
-                            <i class="fas fa-database"></i>
-                            <span>Databases</span>
+                            <i class="fas fa-calculator"></i>
+                            <span>MATLAB</span>
                         </div>
                         <div class="skill-item">
-                            <i class="fab fa-git-alt"></i>
-                            <span>Git</span>
+                            <i class="fas fa-code"></i>
+                            <span>C++</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-table"></i>
+                            <span>Excel</span>
+                        <div class="skill-item">
+                            <i class="fas fa-clipboard-check"></i>
+                            <span>SolidWorks</span>
                         </div>
                     </div>
                 </div>
@@ -129,31 +118,20 @@
                         </div>
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">CubeSat Mission Control System</h3>
+                        <h3 class="project-title">Prototype CubeSat</h3>
                         <p class="project-description">
                             <!-- Brief overview to grab attention -->
-                            Built a complete mission control system for a CubeSat satellite, 
-                            including real-time telemetry, orbital tracking, and automated 
-                            command sequences. Successfully launched and operated for 6 months.
+                            In a team of 8, built a complete prototype 2U CubeSat "SELENE", with full functioning integrated systems. These include a Tracking, Telemetry & Command (TTC) system with a wifi connection that can be used to interface with the satellite remotely. An Electrical Power System (EPS) provides power to all components through solar panels and batteries. Our satellite had two payloads, a hyperspectral camera able to take images in the hyper spectrum on command, and a small radiation detector able to resolve changes in radiation through a photodiode. My particular role was the lead engineer for the Attitude Determination and Control System (ADCS) where I was responsible for accurate attitude estimation as well as three axis attitude control. Check out the link to see the control system in action.
                         </p>
                         <div class="project-tech">
                             <span class="tech-tag">Python</span>
                             <span class="tech-tag">C++</span>
-                            <span class="tech-tag">Raspberry Pi</span>
-                            <span class="tech-tag">Radio Communication</span>
+                            <span class="tech-tag">Embedded Systems</span>
                         </div>
                         <div class="project-actions">
                             <button class="btn btn-primary read-more-btn" data-project="satellite">
                                 <i class="fas fa-info-circle"></i> Read More
                             </button>
-                            <div class="project-links">
-                                <a href="#" class="project-link" target="_blank">
-                                    <i class="fas fa-external-link-alt"></i> Live Demo
-                                </a>
-                                <a href="#" class="project-link" target="_blank">
-                                    <i class="fab fa-github"></i> GitHub
-                                </a>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -249,25 +227,20 @@
                 <div class="contact-info">
                     <h3>Let's Connect</h3>
                     <p>
-                        I'm always interested in new opportunities and exciting projects. 
-                        Feel free to reach out if you'd like to collaborate or just say hello!
+                        I'm always interested in new opportunities and exciting projects.
                     </p>
                     <div class="contact-methods">
                         <div class="contact-method">
                             <i class="fas fa-envelope"></i>
-                            <span>your.email@example.com</span>
+                            <span>magareysam@gmail.com</span>
                         </div>
                         <div class="contact-method">
                             <i class="fab fa-linkedin"></i>
-                            <span>linkedin.com/in/yourprofile</span>
+                            <span>linkedin.com/in/sam-magarey-56a4a6352/</span>
                         </div>
                         <div class="contact-method">
                             <i class="fab fa-github"></i>
-                            <span>github.com/yourusername</span>
-                        </div>
-                        <div class="contact-method">
-                            <i class="fas fa-phone"></i>
-                            <span>+1 (555) 123-4567</span>
+                            <span>github.com/agsmay</span>
                         </div>
                     </div>
                 </div>
@@ -296,12 +269,7 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <p>&copy; 2024 Your Name. All rights reserved.</p>
-                <div class="social-links">
-                    <a href="#" class="social-link"><i class="fab fa-github"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                </div>
+                <p>&copy; 2024 Sam Magarey. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -367,3 +335,4 @@
     <script src="script.js"></script>
 </body>
 </html>
+
