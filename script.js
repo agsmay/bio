@@ -391,6 +391,9 @@ function openModal(projectId) {
         githubEl.style.display = 'none';
     }
     
+    // Add project ID to modal for image viewer
+    modal.setAttribute('data-project-id', projectId);
+    
     // Show modal
     modal.style.display = 'block';
     document.body.style.overflow = 'hidden'; // Prevent background scrolling
@@ -533,6 +536,11 @@ const resumeClose = document.querySelector('.resume-close');
 
 // Open resume modal
 function openResumeModal() {
+    // Load resume only when button is clicked
+    const resumeIframe = document.getElementById('resume-iframe');
+    if (!resumeIframe.src) {
+        resumeIframe.src = 'resume.pdf';
+    }
     resumeModal.style.display = 'block';
     document.body.style.overflow = 'hidden';
 }
@@ -562,19 +570,28 @@ document.addEventListener('keydown', (e) => {
 });
 
 // Make modal images clickable
-document.addEventListener('DOMContentLoaded', () => {
-    // Add click handlers to modal images
-    const modalImages = document.querySelectorAll('#modal-main-image, .thumbnail img');
-    modalImages.forEach(img => {
-        img.style.cursor = 'pointer';
-        img.addEventListener('click', () => {
-            // Get all images for the current project
-            const projectId = document.querySelector('.modal-content').getAttribute('data-project-id');
-            if (projectData[projectId] && projectData[projectId].images) {
-                const images = projectData[projectId].images;
-                const currentIndex = Array.from(modalImages).indexOf(img);
-                openImageViewer(img.src, images, Math.max(0, currentIndex - 1));
+document.addEventListener('click', (e) => {
+    // Check if clicked element is a modal image
+    if (e.target.matches('#modal-main-image, .thumbnail img')) {
+        const img = e.target;
+        const modal = document.getElementById('project-modal');
+        const projectId = modal.getAttribute('data-project-id');
+        
+        if (projectData[projectId] && projectData[projectId].images) {
+            const images = projectData[projectId].images;
+            let currentIndex = 0;
+            
+            // Find current image index
+            if (img.id === 'modal-main-image') {
+                // Main image is always first
+                currentIndex = 0;
+            } else {
+                // Find thumbnail index
+                const thumbnails = document.querySelectorAll('.thumbnail img');
+                currentIndex = Array.from(thumbnails).indexOf(img);
             }
-        });
-    });
+            
+            openImageViewer(img.src, images, currentIndex);
+        }
+    }
 });

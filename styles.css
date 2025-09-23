@@ -437,9 +437,11 @@ section {
 
 .contact-content {
     display: flex;
-    justify-content: center;
-    max-width: 600px;
+    flex-direction: column;
+    align-items: center;
+    max-width: 800px;
     margin: 0 auto;
+    gap: 3rem;
 }
 
 .contact-info h3 {
@@ -499,7 +501,8 @@ section {
     border-radius: 12px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
-    margin-top: 2rem;
+    width: 100%;
+    max-width: 400px;
 }
 
 .resume-section h3 {
@@ -758,6 +761,7 @@ section {
     height: 100%;
     object-fit: cover;
     transition: transform 0.3s ease;
+    cursor: pointer;
 }
 
 .main-image img:hover {
@@ -790,6 +794,7 @@ section {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    cursor: pointer;
 }
 
 .modal-details {
