@@ -250,7 +250,7 @@ const projectData = {
             "images/jab/jab1.jpeg",
             "images/jab/jab2.jpeg",
             "images/jab/jab3.jpeg",
-            "images/jab/stiffner.jpeg",
+            "images/jab/stiffener.jpeg",
             "images/jab/stabiliser.jpeg"
         ],
         challenges: [
