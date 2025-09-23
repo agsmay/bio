@@ -435,3 +435,146 @@ const modalContent = document.querySelector('.modal-content');
 modalContent.addEventListener('scroll', (e) => {
     // Add any scroll-based animations here if needed
 });
+
+// Fullscreen Image Viewer
+const imageViewer = document.getElementById('image-viewer');
+const fullscreenImage = document.getElementById('fullscreen-image');
+const imageViewerClose = document.querySelector('.image-viewer-close');
+const prevImageBtn = document.getElementById('prev-image');
+const nextImageBtn = document.getElementById('next-image');
+const imageCounter = document.getElementById('image-counter');
+
+let currentImageIndex = 0;
+let currentImages = [];
+
+// Open fullscreen image viewer
+function openImageViewer(imageSrc, images, currentIndex = 0) {
+    currentImages = images;
+    currentImageIndex = currentIndex;
+    
+    fullscreenImage.src = imageSrc;
+    imageViewer.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+    
+    updateImageCounter();
+    updateNavigationButtons();
+}
+
+// Close fullscreen image viewer
+function closeImageViewer() {
+    imageViewer.style.display = 'none';
+    document.body.style.overflow = 'auto';
+    fullscreenImage.src = '';
+}
+
+// Update image counter
+function updateImageCounter() {
+    imageCounter.textContent = `${currentImageIndex + 1} / ${currentImages.length}`;
+}
+
+// Update navigation buttons visibility
+function updateNavigationButtons() {
+    prevImageBtn.style.display = currentImages.length > 1 ? 'flex' : 'none';
+    nextImageBtn.style.display = currentImages.length > 1 ? 'flex' : 'none';
+}
+
+// Navigate to previous image
+function showPreviousImage() {
+    if (currentImages.length > 1) {
+        currentImageIndex = (currentImageIndex - 1 + currentImages.length) % currentImages.length;
+        fullscreenImage.src = currentImages[currentImageIndex];
+        updateImageCounter();
+    }
+}
+
+// Navigate to next image
+function showNextImage() {
+    if (currentImages.length > 1) {
+        currentImageIndex = (currentImageIndex + 1) % currentImages.length;
+        fullscreenImage.src = currentImages[currentImageIndex];
+        updateImageCounter();
+    }
+}
+
+// Event listeners for image viewer
+imageViewerClose.addEventListener('click', closeImageViewer);
+prevImageBtn.addEventListener('click', showPreviousImage);
+nextImageBtn.addEventListener('click', showNextImage);
+
+// Close image viewer when clicking outside
+imageViewer.addEventListener('click', (e) => {
+    if (e.target === imageViewer) {
+        closeImageViewer();
+    }
+});
+
+// Close image viewer with Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && imageViewer.style.display === 'block') {
+        closeImageViewer();
+    }
+});
+
+// Keyboard navigation for images
+document.addEventListener('keydown', (e) => {
+    if (imageViewer.style.display === 'block') {
+        if (e.key === 'ArrowLeft') {
+            showPreviousImage();
+        } else if (e.key === 'ArrowRight') {
+            showNextImage();
+        }
+    }
+});
+
+// Resume Modal
+const resumeModal = document.getElementById('resume-modal');
+const viewResumeBtn = document.getElementById('view-resume-btn');
+const resumeClose = document.querySelector('.resume-close');
+
+// Open resume modal
+function openResumeModal() {
+    resumeModal.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+}
+
+// Close resume modal
+function closeResumeModal() {
+    resumeModal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+
+// Event listeners for resume modal
+viewResumeBtn.addEventListener('click', openResumeModal);
+resumeClose.addEventListener('click', closeResumeModal);
+
+// Close resume modal when clicking outside
+resumeModal.addEventListener('click', (e) => {
+    if (e.target === resumeModal) {
+        closeResumeModal();
+    }
+});
+
+// Close resume modal with Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && resumeModal.style.display === 'block') {
+        closeResumeModal();
+    }
+});
+
+// Make modal images clickable
+document.addEventListener('DOMContentLoaded', () => {
+    // Add click handlers to modal images
+    const modalImages = document.querySelectorAll('#modal-main-image, .thumbnail img');
+    modalImages.forEach(img => {
+        img.style.cursor = 'pointer';
+        img.addEventListener('click', () => {
+            // Get all images for the current project
+            const projectId = document.querySelector('.modal-content').getAttribute('data-project-id');
+            if (projectData[projectId] && projectData[projectId].images) {
+                const images = projectData[projectId].images;
+                const currentIndex = Array.from(modalImages).indexOf(img);
+                openImageViewer(img.src, images, Math.max(0, currentIndex - 1));
+            }
+        });
+    });
+});
