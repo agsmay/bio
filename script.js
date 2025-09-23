@@ -218,7 +218,8 @@ const projectData = {
         images: [
             "images/satellite/selene2.JPG",
             "images/satellite/on_table.jpg", 
-            "images/satellite/selene3.JPG"
+            "images/satellite/selene3.JPG",
+            "images/satellite/check.jpeg"
         ],
         challenges: [
             "<strong>State Estimation:</strong> Implemented non-linear state estimation techniques to provide accurate orientation estimates to the onboard computer.",
@@ -248,7 +249,9 @@ const projectData = {
         images: [
             "images/jab/jab1.jpeg",
             "images/jab/jab2.jpeg",
-            "images/jab/jab3.jpeg"
+            "images/jab/jab3.jpeg",
+            "images/jab/stiffner.jpeg",
+            "images/jab/stabiliser.jpeg"
         ],
         challenges: [
             "<strong>Composites:</strong> Worked mainly with fibreglass components, and discovered the difficulties of composite manufacturing.",
@@ -536,13 +539,48 @@ const resumeClose = document.querySelector('.resume-close');
 
 // Open resume modal
 function openResumeModal() {
-    // Load resume only when button is clicked
     const resumeIframe = document.getElementById('resume-iframe');
-    if (!resumeIframe.src) {
-        resumeIframe.src = 'resume.pdf';
-    }
+    const resumeLoading = document.getElementById('resume-loading');
+    
+    // Show loading state
+    resumeLoading.style.display = 'flex';
+    resumeIframe.style.display = 'none';
+    
     resumeModal.style.display = 'block';
     document.body.style.overflow = 'hidden';
+    
+    // Load resume with fallback
+    if (!resumeIframe.src) {
+        resumeIframe.src = 'resume.pdf';
+        
+        // Handle iframe load
+        resumeIframe.onload = function() {
+            resumeLoading.style.display = 'none';
+            resumeIframe.style.display = 'block';
+        };
+        
+        // Handle iframe error (fallback to new tab)
+        resumeIframe.onerror = function() {
+            resumeLoading.innerHTML = `
+                <i class="fas fa-exclamation-triangle"></i>
+                <p>PDF viewer not supported. Click "Open in New Tab" to view resume.</p>
+            `;
+        };
+        
+        // Timeout fallback after 5 seconds
+        setTimeout(() => {
+            if (resumeLoading.style.display !== 'none') {
+                resumeLoading.innerHTML = `
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <p>PDF taking too long to load. Click "Open in New Tab" to view resume.</p>
+                `;
+            }
+        }, 5000);
+    } else {
+        // Already loaded, just show
+        resumeLoading.style.display = 'none';
+        resumeIframe.style.display = 'block';
+    }
 }
 
 // Close resume modal
