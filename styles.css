@@ -436,9 +436,10 @@ section {
 }
 
 .contact-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    display: flex;
+    justify-content: center;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 .contact-info h3 {
@@ -467,6 +468,13 @@ section {
     background: white;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.contact-method:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .contact-method i {
@@ -475,37 +483,15 @@ section {
     width: 20px;
 }
 
-.contact-form {
-    background: white;
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+.contact-link {
+    text-decoration: none;
+    color: inherit;
 }
 
-.form-group {
-    margin-bottom: 1.5rem;
+.contact-link:hover {
+    color: inherit;
 }
 
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 0.75rem;
-    border: 2px solid #e5e7eb;
-    border-radius: 8px;
-    font-size: 1rem;
-    transition: border-color 0.3s ease;
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color: #2563eb;
-}
-
-.form-group textarea {
-    resize: vertical;
-    min-height: 120px;
-}
 
 /* Footer */
 .footer {

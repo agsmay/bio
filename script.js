@@ -62,38 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Contact form handling
-const contactForm = document.querySelector('.contact-form form');
-if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // Get form data
-        const formData = new FormData(this);
-        const name = formData.get('name');
-        const email = formData.get('email');
-        const subject = formData.get('subject');
-        const message = formData.get('message');
-        
-        // Simple validation
-        if (!name || !email || !subject || !message) {
-            alert('Please fill in all fields.');
-            return;
-        }
-        
-        // Email validation
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(email)) {
-            alert('Please enter a valid email address.');
-            return;
-        }
-        
-        // For now, just show a success message
-        // In a real implementation, you would send this data to a server
-        alert('Thank you for your message! I\'ll get back to you soon.');
-        this.reset();
-    });
-}
+// Contact form handling removed - no longer needed
 
 // Typing animation for hero title
 function typeWriter(element, text, speed = 100) {
@@ -193,9 +162,9 @@ function copyToClipboard(text) {
     });
 }
 
-// Add click handlers to contact methods for copying
+// Add click handlers to contact methods for copying (email only)
 document.addEventListener('DOMContentLoaded', () => {
-    const contactMethods = document.querySelectorAll('.contact-method');
+    const contactMethods = document.querySelectorAll('.contact-method:not(.contact-link)');
     
     contactMethods.forEach(method => {
         method.style.cursor = 'pointer';
