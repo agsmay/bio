@@ -245,12 +245,11 @@ const readMoreBtns = document.querySelectorAll('.read-more-btn');
 const projectData = {
     satellite: {
         title: "SELENE Lunar CubeSat Mission",
-        description: "In a team of 8, built a complete prototype 2U CubeSat 'SELENE', with full functioning integrated systems. These include a Tracking, Telemetry & Command (TTC) system with a wifi connection that can be used to interface with the satellite remotely. An Electrical Power System (EPS) provides power to all components through solar panels and batteries. Our satellite had two payloads, a hyperspectral camera able to take images in the hyper spectrum on command, and a small radiation detector able to resolve changes in radiation through a photodiode. My particular role was the lead engineer for the Attitude Determination and Control System (ADCS) where I was responsible for accurate attitude estimation as well as three axis attitude control. Check out the link to see the control system in action.",
+        description: "In a team of 8, built a complete prototype 2U CubeSat 'SELENE', with full functioning integrated systems. These include a Tracking, Telemetry & Command (TTC) system with a wifi connection that can be used to interface with the satellite remotely. An Electrical Power System (EPS) provides power to all components through solar panels and batteries. Our satellite had two payloads, a hyperspectral camera able to take images in the hyper spectrum on command, and a small radiation detector able to resolve changes in radiation through a photodiode. My particular role was the lead engineer for the Attitude Determination and Control System (ADCS) where I was responsible for accurate attitude estimation as well as three axis attitude control. Check out the link to see the control system in action. We have been selected to present on SELENE at the 11th UNISEC Global Meeting in Tokyo Japan later this year.",
         images: [
-            "images/satellite/satellite-main.jpg",
+            "images/satellite/selene2.JPG",
             "images/satellite/on_table.jpg", 
-            "images/satellite/telemetry-dashboard.jpg",
-            "images/satellite/orbital-tracking.jpg"
+            "images/satellite/selene3.JPG"
         ],
         challenges: [
             "<strong>State Estimation:</strong> Implemented non-linear state estimation techniques to provide accurate orientation estimates to the onboard computer.",
@@ -264,7 +263,7 @@ const projectData = {
         title: "Flight Simulator",
         description: "In a small research group, I worked with 3 others on developing new algorithms for USYD's Eight360 ball flight simulator. This was part of a research internship during winter 2025, and involved developing a new system to ensure safe operation, developing a new force perception algorithm, and gaining real pilot feedback on the performance.",
         images: [
-            "images/ball/ball_main.jpg",
+            "images/ball/poster.JPG",
             "images/ball/brendan_flying.png"
         ],
         challenges: [
@@ -278,27 +277,25 @@ const projectData = {
         title: "Jabiru Aircraft Restoration",
         description: "With the first year aeronautical engineering cohort, and under the supervision of Licensed Aircraft Maintenance Engineers, restored a Jabiru J160C aircraft, including assembly of the wings, engine and tailplane. In the same project, developed a new T-Tail beginning with engineering drawings for each component.",
         images: [
-            "images/mobile/app-main.jpg",
-            "images/mobile/device-control.jpg",
-            "images/mobile/automation-rules.jpg",
-            "images/mobile/energy-monitoring.jpg"
+            "images/jab/jab1.jpeg",
+            "images/jab/jab2.jpeg",
+            "images/jab/jab3.jpeg"
         ],
         challenges: [
             "<strong>Composites:</strong> Worked mainly with fibreglass components, and discovered the difficulties of composite manufacturing.",
-            "<strong>Voice Recognition:</strong> Integrated advanced voice control with 95% accuracy for natural language device commands.",
             "<strong>Teamwork:</strong> Many aspects of assembly required good communication and teamwork with other students to ensure components were properly fitted.",
         ],
         technologies: ["Handtools", "Machining", "Fibreglass layup"],
-        video: "https://www.youtube.com/embed/your-mobile-video-id",
+        video: "https://youtube.com/shorts/-EqDPgLGzg4",
     },
     rocketry: {
         title: "USYD Rocketry",
         description: "Member of the USYD Rocketry Team, where most of my work is in modelling and simulations, as well as control systems. As the current lead of the Modelling & Control Subsystem for Project Galah, I am overseeing the development of an airbrake system for active altitude control. I was previously a flight simulations engineer for Project Pardalote, working on design optimisation, trajectory analysis, and hybrid engine modelling.",
         images: [
-            "images/mobile/app-main.jpg",
-            "images/mobile/device-control.jpg",
-            "images/mobile/automation-rules.jpg",
-            "images/mobile/energy-monitoring.jpg"
+            "images/rocket/brakes.JPG",
+            "images/rocket/brakes.JPG",
+            "images/rocket/brakes.JPG",
+            "images/rocket/brakes.JPG"
         ],
         challenges: [
             "<strong>Control Systems:</strong> Implementing real time Model Predictive Control, balancing accuracy and speed.",
